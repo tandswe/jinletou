@@ -1,0 +1,38 @@
+/*参考: https://www.cnblogs.com/qingchunshiguang/p/8011103.html*/
+/*父级*/
+.flex,.flex-start,.flex-end,.flex-start-end,.flex-sa{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:row;
+	align-items: center;
+}
+.flex-item-2 >div{
+	width: 50%;
+}
+.flex-item-3 >div{
+	width: 33.3%;
+}
+.flex-start{
+	justify-content: flex-start;
+}
+.flex-end{
+	justify-content: flex-end;
+}
+.flex-start-end{
+	justify-content: space-between;
+}
+.flex-sa{
+	justify-content: space-around;
+}
+/*垂直方向flex-start-end*/
+.flex-start-end-colums{
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/*子级*/
+.flex-item{
+	flex-grow: 1;
+}
+

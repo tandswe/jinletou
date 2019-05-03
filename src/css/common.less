@@ -1,0 +1,240 @@
+// 示例：
+// <div class="c-list-item">
+//     <div class="c-item-label">
+//         <label> label </label>
+//     </div>
+//     <div class="c-item-content">
+//         <div>
+//             content
+//         </div>
+//     </div>
+// </div>
+
+@gap-basic: 0.16rem;
+@padding-lg: 0.6rem;
+@padding-md: 0.3rem;
+@border-color: #f5f5f5; 
+
+@font-gray-3: #999999;
+
+@font-gray-1: #9f9f9f;
+@font-gray-2: #484848;
+@font-red-1: #ca3c30;
+
+button:focus,
+input:focus{
+    outline-style: none
+}
+
+.main{
+    background-color: #f5f5f5;
+    font-size: 12px;
+    // height: 100%;
+}
+
+.u-header-padding{
+    height: 0.9rem;
+    width: 100%;
+}
+
+// list 基本类型
+.c-list-item{
+    justify-content: space-between;
+    width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction:row;
+    align-items: center;
+    padding: 0.3rem @gap-basic 0.3rem @gap-basic;
+    border-bottom: 0.01rem solid #000;
+    box-sizing: border-box;
+    border-bottom: 1px solid @border-color;
+
+    &.noborder{
+        border: none;
+    }
+
+    // 纯文本label
+    .c-item-label{
+        width: 100%;
+        font-size: 14px;
+        flex-wrap: wrap;
+        flex-direction:row;
+        align-items: center;
+    	display: flex;
+        justify-content: flex-start;
+    }
+
+    // 纯文本content
+    .c-item-content{
+        font-size: 14px;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction:row;
+        align-items: center;
+    	display: flex;
+        justify-content: flex-end;
+    }
+
+    // 箭头，可点击
+    .c-item-raw-right{
+        background: url(../img/myself/右箭头@2x.png) center no-repeat;
+        background-size:100% 100%;
+        width: 0.2rem;
+        height: 0.25rem;
+        margin-left: 0.15resm;
+    }
+}
+
+// 示例：
+// <div class="c-list-item c-list-item-input" 
+// >
+//     <input type="text" >
+// </div>
+
+// 验证输入框
+// <div class="c-list-item c-list-item-input c-list-item-identification"
+// >
+//     <input type="text" >
+//     <div class="c-identification-btn"
+//     ></div>
+// </div>
+
+// list 输入框
+.c-list-item.c-list-item-input{
+    input{
+        width: 100%;
+        display: flex;
+        font-size: 16px;
+        text-indent: 0.25rem;
+    }
+
+    // 验证码输入框
+    &.c-list-item-identification{
+
+        .c-identification-btn{
+            text-align: right;
+            padding: 0 0.2rem; 
+            white-space: nowrap;
+            word-break: keep-all;
+
+            &::before{
+                content: '获取验证码';
+                color: red;
+            }
+        }
+    }
+}
+
+// <div class="c-btn">
+//     <button>确定</button>
+// </div>
+.c-btn{
+    margin-top: 0.5rem;
+    padding: 0 @gap-basic;
+
+    button{
+        margin-bottom: @gap-basic;
+        width: 100%;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        background: red;
+        color: #fff;
+        text-align: center;
+        border: none;
+        font-size: 16px;
+        border-radius: 0.1rem; 
+    }
+
+    &.disabled{
+        button{
+            background-color: #e5a997; 
+
+            .disabled{
+                background-color: #e5a997;
+            }
+        }
+    }
+    
+    .c-btn-details{
+        font-size: 12px;
+        text-align: left;
+    }
+}
+
+.c-panel{
+    background: #fff;
+    margin-top: 0.2rem;
+
+    .panel-item{
+        display: none;
+
+        &.selected{
+            display: block;
+        }
+    }
+}
+
+.c-panel{
+    padding: 0.3rem;
+}
+
+.f-fl { float: left; }
+.f-fr { float: right; }
+
+// 功能类
+.f-clear:after{
+    content: "";
+    clear: both;
+    display: block;
+    width: 0px;
+}
+.f-tl{
+    text-align: left;
+}
+.f-tr{
+    text-align: right;
+}
+
+.f-gray-1 {
+    color: @font-gray-1
+}
+.f-gray-2 {
+    color: @font-gray-2
+}
+
+.f-red-1 {
+    color: @font-red-1
+}
+
+.f-bdr{
+    border-radius: 0.1rem;
+}
+.f-fs-12{ font-size: 12px;}
+.f-fs-14{ font-size: 14px;}
+.f-fs-15{ font-size: 15px;}
+.f-fs-16{ font-size: 16px;}
+.f-fs-18{ font-size: 18px;}
+
+.f-fw-b{ font-weight: bold;}
+
+.i-raw-right{
+    background: url(../img/myself/raw-right.png) no-repeat; 
+    display: inline-block;
+    background-size: 100% 100%;
+}
+
+.i-checkbox{
+    background: url(../img/myself/i-checkbox-unchecked.png) no-repeat; 
+    // display: inline-block;
+    background-size: 100% 100%;
+
+    &.checked{
+        background: url(../img/myself/i-checkbox-checked.png) no-repeat; 
+        background-size: 100% 100%;
+    }
+}
+
+.f-bg-gray{
+    background-color: #f5f5f5; 
+}
