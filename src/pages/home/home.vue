@@ -17,7 +17,7 @@
         </div>
         <div class="mall">
           <div @click="goMall">
-            <img src="/static/chicon/mall.png">
+             <img src="../../../static/chicon/img_advert.png">
           </div>
           <div v-for="(item,index) in logoList">
             <a :href="item.url">
