@@ -7,12 +7,12 @@
 			<div></div>
 		</div>
 		<div class="flex-item-4 flex-start cityLoadList">
-			<div v-for="(item,index) in cityLoadList" @click="goDetail(item.href)">
+			<div v-for="(item,index) in cityLoadList" @click="goDetail(item.href,item.type)">
 				<img :src="item.img">
 				<p>{{item.p}}</p>
 			</div>
 		</div>
-		<img src="/static/chicon/mall.png" alt="" class="city_advert">
+		<!-- <img src="/static/chicon/mall.png" alt="" class="city_advert"> -->
 		<div class="flex-start-end static-ad-list" style="padding-top: .1rem;">
 			<div style="font-size: 15px;">
 				精选
@@ -74,30 +74,32 @@
 				//				show3:true,
 				cityLoadList: [{
 					p: '城主攻略',
-					img: '../../../static/chicon/cityload/矢量智能对象@2x.png',
+					img: 'static/chicon/cityload/chengzhu.png',
 					href: '/cityloadArea/getMoney'
 				}, {
 					p: '提交任务',
-					img: '../../../static/chicon/cityload/提交任务@2x.png',
+					img: 'static/chicon/cityload/tijiao.png',
 					href: '/cityloadArea/orderManager'
 				}, {
 					p: '领取任务',
-					img: '../../../static/chicon/cityload/领取任务@2x.png',
+					img: 'static/chicon/cityload/qingqu.png',
 					href: '/cityloadArea/getTask'
 				}, {
 					p: '发布广告',
-					img: '../../../static/chicon/cityload/发布广告@2x.png',
+					img: 'static/chicon/cityload/guangao.png',
 					href: '/cityloadArea/editAd'
 				}, {
 					p: '推广二维码',
-					img: '../../../static/chicon/cityload/推广二维码@2x.png',
+					img: 'static/chicon/cityload/erweima.png',
 					href: '/cityloadArea/share'
 				}, {
 					p: '私人影院',
-					img: '../../../static/chicon/cityload/拼多多@2x.png'
+					img: 'static/chicon/cityload/siren.png',
+					href: 'http://www.yshitv.cn/',
+					type:'5'
 				},  {
 					p: '更多',
-					img: '../../../static/chicon/cityload/更多@2x.png'
+					img: 'static/chicon/cityload/genduo.png'
 				}]
 			}
 		},
@@ -125,9 +127,13 @@
 			orderList() {
 				this.$gotoPages('/cityloadArea/orderManager')
 			},
-			goDetail(href) {
+			goDetail(href,type) {
 				if(href != undefined) {
+				 if(type != 5) {
 					this.$gotoPages(href)
+					}else{
+						window.location.href = href
+					}
 				} else {
 					this.showErr = true
 				}
