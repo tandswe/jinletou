@@ -95,7 +95,7 @@
 				}, {
 					p: '私人影院',
 					img: 'static/chicon/cityload/siren.png',
-					href: 'http://www.yshitv.cn/',
+					href: 'http://hrradio.cn/',
 					type:'5'
 				},  {
 					p: '更多',
